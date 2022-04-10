@@ -2,7 +2,6 @@ $('#timer');
 
 function displayCureentDayTime() {
 var currentDateTime = moment().format("dddd, MMMM Do, YYYY  hh:mm:ss");
-console.log(currentDateTime);
 $('#currentDayTime').text(currentDateTime);
 }
 
@@ -12,9 +11,7 @@ function changeTextareaColor() {
     $('textArea').each(function(){
 //    currentHour = currentDateTime."hh"
     var currentHour = moment().hour();
-    console.log(currentHour);
     var timeBlockHour = $(this).parent().attr('id');
-    console.log(timeBlockHour);
     if (currentHour===parseInt(timeBlockHour)){
         $(this).addClass("present");
     } else if (currentHour>parseInt(timeBlockHour)){
@@ -30,8 +27,14 @@ setInterval(changeTextareaColor, 1000);
 $('.saveBtn').on('click',function(){
     var parentId = $(this).parent().attr('id');
     console.log(parentId);
-    var input = textArea.val();
+    var input = parentId.textarea.val();
+    console.log(input);
     localStorage.setItem(parentId,input);
 })
 
-localStorage.getItem(parentId,input);
+/* localStorage.getItem(parentId,input);
+for (parentId=9;parentId < 18;parentId++) {
+    if (localStorage.getItem(parentId,input)) {
+        $('#parentId').textarea.text(input);
+    }
+} */
