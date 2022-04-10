@@ -28,4 +28,10 @@ function changeTextareaColor() {
 setInterval(changeTextareaColor, 1000); 
 
 $('.saveBtn').on('click',function(){
-    
+    var parentId = $(this).parent().attr('id');
+    console.log(parentId);
+    var input = textArea.val();
+    localStorage.setItem(parentId,input);
+})
+
+localStorage.getItem(parentId,input);
