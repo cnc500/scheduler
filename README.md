@@ -12,6 +12,7 @@ the moment a new hour starts, the background colors of the text areas will updat
 
 ## Deployed Image
 
+[screenshot](screenshot5.png)
 
 ## URL
 
@@ -19,3 +20,4 @@ https://cnc500.github.io/scheduler/
 
 ## Reference
 
+Abdullah Al Hilfi helped point me in the right direction setting up parents of the text areas with id's matching the hours that they represented. 
