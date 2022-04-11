@@ -24,17 +24,20 @@ function changeTextareaColor() {
 
 setInterval(changeTextareaColor, 1000); 
 
-$('.saveBtn').on('click',function(){
+$('.saveBtn').on('click', function(){
     var parentId = $(this).parent().attr('id');
     console.log(parentId);
-    var input = parentId.textarea.val();
+    var input = $(this).siblings('.description').val();
     console.log(input);
     localStorage.setItem(parentId,input);
 })
 
-/* localStorage.getItem(parentId,input);
-for (parentId=9;parentId < 18;parentId++) {
+// localStorage.getItem(parentId,input);
+for (var parentId=9;parentId < 18;parentId++) {
+    var input = [String];
+    console.log(input);
+    localStorage.getItem(parentId,input);
     if (localStorage.getItem(parentId,input)) {
-        $('#parentId').textarea.text(input);
+        $('#parentId').children('.desription').text(input);
     }
-} */
+} 
