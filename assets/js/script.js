@@ -1,5 +1,3 @@
-$('#timer');
-
 function displayCureentDayTime() {
 var currentDateTime = moment().format("dddd, MMMM Do, YYYY  hh:mm:ss");
 $('#currentDayTime').text(currentDateTime);
@@ -33,11 +31,15 @@ $('.saveBtn').on('click', function(){
 })
 
 // localStorage.getItem(parentId,input);
-for (var parentId=9;parentId < 18;parentId++) {
-    var input = [String];
-    console.log(input);
-    localStorage.getItem(parentId,input);
-    if (localStorage.getItem(parentId,input)) {
-        $('#parentId').children('.desription').text(input);
+window.addEventListener('load',retrieveStoredText());
+
+function retrieveStoredText() {
+    for (var parentId=9;parentId < 18;parentId++) {
+        var input = [String];
+        console.log(input);
+        localStorage.getItem(parentId,input);
+        if (localStorage.getItem(parentId,input)) {
+            $('#parentId').children('.desription').text(input);
+        }
     }
-} 
+}
