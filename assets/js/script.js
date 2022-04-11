@@ -34,12 +34,13 @@ $('.saveBtn').on('click', function(){
 window.addEventListener('load',retrieveStoredText());
 
 function retrieveStoredText() {
+    var input = [String];
     for (var parentId=9;parentId < 18;parentId++) {
-        var input = [String];
+        
         console.log(input);
-        localStorage.getItem(parentId,input);
+        localStorage.getItem(parentId);
         if (localStorage.getItem(parentId,input)) {
-            $('#parentId').children('.desription').text(input);
+            $('#parentId').children('.description').text(input);
         }
     }
 }
